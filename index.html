@@ -550,6 +550,30 @@ body{background:
 @media(max-width:900px){.news{grid-template-columns:1fr}.hero-grid{grid-template-columns:1fr}.portrait{max-width:420px;margin:0 auto}.about{grid-template-columns:1fr}.programme-head{align-items:flex-start!important}.tli{grid-template-columns:1fr}}
 @media(max-width:640px){.hero{padding-top:38px}.hero h1{font-size:52px}.nav-in{height:62px}.brand{font-size:19px}.nav .btn-s{padding:0 10px}.metrics{margin-top:38px}.sec{padding:64px 0}.programme-body{padding:16px!important}.news{gap:8px}.nrow{grid-template-columns:1fr}.portrait{border-width:5px}}
 
+
+/* ================================================================
+   2026-11 LAYOUT FIXES
+   ================================================================ */
+html,body{overflow-x:clip}
+/* Research programme: equal-height rows so the two columns line up */
+.programme-branch{grid-template-rows:auto 1fr}
+.project-stack{grid-template-rows:repeat(4,minmax(0,1fr));gap:12px}
+.project-card{align-items:center!important;height:100%}
+.project-card .project-icon{display:block!important;line-height:38px;text-align:center;font-size:10.5px;letter-spacing:.02em;white-space:nowrap}
+.project-card .project-icon sub{font-size:.75em;line-height:0}
+.project-card>div>span{display:block}
+.programme-link::before{top:0!important;bottom:0!important}
+.branch-title{min-height:30px}
+.programme-map{margin-bottom:clamp(40px,5vw,60px)}
+/* Foundation / patents / thrusts */
+.pats .pat:last-child:nth-child(odd){grid-column:1/-1}
+.th .hyp,.th p{max-width:78ch}
+.mk-n{background:var(--c-green-s);color:var(--c-green)}
+.pub .meta{align-items:center;row-gap:6px}
+/* Currently-working-on list */
+.now li{align-items:baseline}
+.now li i{transform:translateY(-1px)}
+@media(max-width:760px){.project-stack{grid-template-rows:none}.project-card{height:auto}}
 </style>
 
 <nav class="nav" id="nav">
@@ -587,14 +611,14 @@ body{background:
    </div>
 
     <div class="metrics">
-      <div class="metric"><b>21</b><span>Peer-reviewed articles</span></div>
+      <div class="metric"><b>22</b><span>Peer-reviewed articles</span></div>
       <div class="metric"><b>8</b><span>As first author</span></div>
       <div class="metric"><b>1,435</b><span>Citations</span></div>
       <div class="metric"><b>16</b><span>h-index</span></div>
       <div class="metric"><b>18</b><span>i10-index</span></div>
       <div class="metric"><b>5</b><span>Patent applications</span></div>
     </div>
-    <p class="metric-note">Citation metrics from <a href="https://scholar.google.ca/citations?user=nSrFnmMAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>, August 2026 &middot; 3 of the 21 articles are invited reviews</p>
+    <p class="metric-note">Citation metrics from <a href="https://scholar.google.ca/citations?user=nSrFnmMAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>, August 2026 &middot; article count includes one 2026 accepted manuscript &middot; 3 of the 22 articles are invited reviews</p>
   </div>
 </header>
 
@@ -645,14 +669,14 @@ body{background:
       <aside class="now">
         <div class="now-h"><span class="mono">Currently working on</span><p>Electrochemical energy conversion and storage</p></div>
         <ul>
-          <li><i></i>Green ammonia through N<sub>2</sub> and nitrate reduction</li>
-          <li><i></i>Urea by electrochemical C&ndash;N coupling</li>
-          <li><i></i>Nitric acid through selective N<sub>2</sub> oxidation</li>
-          <li><i></i>CO<sub>2</sub> capture and conversion into fuels and chemicals</li>
-          <li><i></i>Battery cathode materials and surface modification</li>
-          <li><i></i>Solid-state electrolytes and electrode&ndash;electrolyte interfaces</li>
+          <li><i></i><span>Green ammonia through N<sub>2</sub> and nitrate reduction</span></li>
+          <li><i></i><span>Urea by electrochemical C&ndash;N coupling</span></li>
+          <li><i></i><span>Nitric acid through selective N<sub>2</sub> oxidation</span></li>
+          <li><i></i><span>CO<sub>2</sub> capture and conversion into fuels and chemicals</span></li>
+          <li><i></i><span>Battery cathode materials and surface modification</span></li>
+          <li><i></i><span>Solid-state electrolytes and electrode&ndash;electrolyte interfaces</span></li>
         </ul>
-        <p class="now-f">Studied through connected DFT, machine-learned molecular dynamics, multiphysics modelling and machine-learning workflows, anchored to synthesis and electrochemical measurement.</p>
+        <p class="now-f">Studied with connected DFT, machine-learned molecular dynamics and multiphysics modelling, anchored to synthesis and electrochemical measurement.</p>
       </aside>
     </div>
   </div>
@@ -662,6 +686,7 @@ body{background:
   <div class="wrap">
     <div class="sh rv" style="margin-bottom:22px"><span class="mono">Recent</span><h2>News and updates.</h2></div>
     <div class="news rv">
+      <div class="nrow"><span class="nd">2026</span><p>Study on <b>crystal-water regulation of Prussian blue cathodes</b> for liquid and halide solid-state sodium-ion batteries accepted in <em>Energy &amp; Environmental Science</em>.</p></div>
       <div class="nrow"><span class="nd">2026</span><p>Invited review on <b>emerging 2D materials for green ammonia electrosynthesis</b> published in <em>ChemSusChem</em>.</p></div>
       <div class="nrow"><span class="nd">2026</span><p>Work on local-field-assisted nitrate reduction using Ni(TCNQ)<sub>2</sub> nanostructures published in <em>Advanced Functional Materials</em>.</p></div>
       <div class="nrow"><span class="nd">2025</span><p>Joined the <b>University of Toronto</b> as a Postdoctoral Fellow in Materials Science &amp; Engineering with Prof. Chandra Veer Singh.</p></div>
@@ -818,8 +843,9 @@ body{background:
       </div>
       <div class="fd">
         <h3>Multiscale and data-driven methodology</h3>
-        <p>My current postdoctoral work develops connected DFT &rarr; MLIP molecular dynamics &rarr; continuum multiphysics &rarr; uncertainty-aware Bayesian optimization workflows for symmetry-broken 2D semiconductors, where an intrinsic out-of-plane dipole governs charge separation, defect behaviour and interfacial reactivity.</p>
+        <p>My current postdoctoral work develops connected DFT &rarr; MLIP molecular dynamics &rarr; continuum multiphysics &rarr; uncertainty-aware Bayesian optimization workflows for symmetry-broken 2D semiconductors, where an intrinsic out-of-plane dipole governs charge separation, defect behaviour and interfacial reactivity. The same toolchain now extends to storage: first-principles calculations resolved how crystal water sets Na-site access, Fe redox activity and electrolyte compatibility in Prussian blue cathodes for halide solid-state sodium-ion batteries.</p>
         <div class="cites">
+          <span><b>Energy Environ. Sci.</b> 2026 &mdash; accepted manuscript</span>
           <span><b>ChemSusChem</b> 2026, 19, e202502111 &mdash; invited review</span>
           <span>MACE / GRACE-class MLIPs &middot; active learning</span>
           <span>Multi-objective acquisition under small, expensive data</span>
@@ -922,13 +948,14 @@ body{background:
   <div class="wrap">
     <div class="sh rv">
       <span class="mono">Publications</span>
-      <h2>21 peer-reviewed articles.</h2>
-      <p>Reverse chronological. My name appears in bold; first-author papers and invited reviews are marked. Filter by role or by chemistry.</p>
+      <h2>22 peer-reviewed articles.</h2>
+      <p>Listed newest first. My name is in bold, and first-author papers and invited reviews are labelled. Use the filters to narrow the list by role or topic, and select a DOI to open the article.</p>
     </div>
     <div class="filters rv" id="filters">
       <button class="fbtn" aria-pressed="true" data-f="all">All <em id="c-all"></em></button>
       <button class="fbtn" aria-pressed="false" data-f="first">First author <em id="c-first"></em></button>
       <button class="fbtn" aria-pressed="false" data-f="review">Invited reviews <em id="c-review"></em></button>
+      <button class="fbtn" aria-pressed="false" data-f="storage">Batteries <em id="c-storage"></em></button>
       <button class="fbtn" aria-pressed="false" data-f="ammonia">Ammonia <em id="c-ammonia"></em></button>
       <button class="fbtn" aria-pressed="false" data-f="urea">Urea / C&ndash;N <em id="c-urea"></em></button>
       <button class="fbtn" aria-pressed="false" data-f="nitric">Nitric acid <em id="c-nitric"></em></button>
@@ -1153,10 +1180,11 @@ body{background:
 
   /* ---- publications ---- */
   var P=[
+    {t:"Crystal-water regulation governs Prussian blue cathodes in liquid-batteries and halide solid-state batteries",a:"P. Pirayesh, <b>Sourav Paul</b>, Z. L. Dong, A. Rao, V. Martins, M. Golozar, Y. Yuan, Y. Gan, M. Yang, R. Andaveh, Y. Xu, X. Pang, J. Howe, C. V. Singh, Y. Zhao",j:"Energy & Environmental Science",v:"2026, accepted manuscript",doi:"",st:"New · 2026",r:[],g:["storage"]},
     {t:"Emerging 2D materials for green ammonia electrosynthesis: integrating experimental, computation, and machine learning strategies toward commercialization",a:"<b>Sourav Paul</b>, P. S. Maiti, K. Sahoo, B. Keshari, T. K. Dhar, U. K. Ghorai",j:"ChemSusChem",v:"2026, 19, e202502111",doi:"10.1002/cssc.202502111",r:["first","review"],g:["ammonia"]},
     {t:"Local enhanced electric field assisted electrocatalytic nitrate reduction to ammonia using Ni(TCNQ)₂/NF nanostructures",a:"N. Mukherjee, A. Adalder, <b>Sourav Paul</b>, et al.",j:"Advanced Functional Materials",v:"2026, 36 (13), e19797",doi:"10.1002/adfm.202519797",r:[],g:["ammonia"]},
     {t:"Morphology dependent N₂ reduction on Cu₂O: combined experimental and computational study for efficient ammonia electrocatalytic synthesis",a:"<b>Sourav Paul</b>, A. Gain, A. Adalder, S. Pal, S. H. Mushrif, U. K. Ghorai",j:"Small",v:"2025, 2505121",doi:"10.1002/smll.202505121",r:["first"],g:["ammonia"]},
-    {t:"Nanolignin functional separators for flexible lithium–sulfur batteries with enhanced performance",a:"E. Bellinetto, V. K. Tomer, R. Malik, <b>Sourav Paul</b>, et al.",j:"Energy & Environmental Materials",v:"e70190",doi:"",r:[],g:["other"]},
+    {t:"Nanolignin functional separators for flexible lithium–sulfur batteries with enhanced performance",a:"E. Bellinetto, V. K. Tomer, R. Malik, <b>Sourav Paul</b>, et al.",j:"Energy & Environmental Materials",v:"e70190",doi:"",r:[],g:["storage","other"]},
     {t:"Low-frequency hydromechanical energy triggered piezocatalytic activity of MoS₂ nanosheets for sustainable removal of Cr(VI)",a:"T. Ghosh, A. Pathak, S. Dhang, J. Mondal, <b>Sourav Paul</b>, et al.",j:"Nano Energy",v:"146, 111484",doi:"",r:[],g:["other"]},
     {t:"Boosting selective nitrogen oxidation to nitric acid by synergizing cobalt phthalocyanine on carbon nitride surface",a:"<b>Sourav Paul</b>, A. Adalder, N. Barman, R. Thapa, A. Bera, K. Mitra, U. K. Ghorai",j:"Advanced Functional Materials",v:"2024, 34, 2408314",doi:"10.1002/adfm.202408314",r:["first"],g:["nitric"]},
     {t:"Iron phthalocyanine hollow architecture enabled ammonia production via nitrate reduction to achieve 100% Faradaic efficiency",a:"S. Sarkar, A. Adalder, <b>Sourav Paul</b>, et al.",j:"Applied Catalysis B: Environmental",v:"2024, 343, 123580",doi:"",r:[],g:["ammonia"]},
@@ -1188,6 +1216,7 @@ body{background:
       var marks="";
       if(p.r.indexOf("first")>-1) marks+='<span class="mk mk-1">First author</span>';
       if(p.r.indexOf("review")>-1) marks+='<span class="mk mk-r">Invited review</span>';
+      if(p.st) marks+='<span class="mk mk-n">'+p.st+'</span>';
       var doiHtml = p.doi ? '<a class="doi" href="https://doi.org/'+p.doi+'" target="_blank" rel="noopener">doi:'+p.doi+'</a>' : '';
       row.innerHTML='<span class="idx">'+String(i+1).padStart(2,"0")+'</span>'
         +'<div><p class="t">'+p.t+'</p><p class="a">'+p.a+'</p>'
@@ -1197,7 +1226,7 @@ body{background:
     if(!n){var e=document.createElement("p");e.className="empty";e.textContent="No publications in this category.";list.appendChild(e);}
   }
   function count(f){var n=0;P.forEach(function(p){if(f==="all"||p.r.indexOf(f)>-1||p.g.indexOf(f)>-1)n++;});return n;}
-  ["all","first","review","ammonia","urea","nitric","other"].forEach(function(f){
+  ["all","first","review","storage","ammonia","urea","nitric","other"].forEach(function(f){
     var el=document.getElementById("c-"+f); if(el) el.textContent=count(f);
   });
   var fbtns=document.querySelectorAll("#filters .fbtn");
